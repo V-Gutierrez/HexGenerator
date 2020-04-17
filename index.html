@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Changer</title>
+</head>
+<body id="body">
+
+    <div id="hex"></div>
+    <div class="change" onclick="genHex()">
+        
+        
+
+        <button id="button">
+                Click me!
+        </button>
+    </div>
+    
+    <style>
+
+
+        body{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            height: 500px;
+            width: 100%;
+            transition: 1s ease;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        button{
+            border: none;
+            background-color: black;
+            box-shadow: aquamarine 0px 10px ;
+            cursor: pointer;
+            transition: 0.5s ease;
+            font-style: italic;
+            font-size: 100px;
+            outline:none;
+            mix-blend-mode: difference;
+            color: white;
+                    }
+
+        button:hover{
+            background-color: black;
+            color: white;
+            box-shadow: white 0px 10px;
+        }
+
+        #hex{
+            background-color: white;
+            mix-blend-mode: difference;
+            font-size: 40px;
+
+
+                    }
+        
+
+
+    </style>
+
+    <script>
+
+        const colors = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']
+                
+        let button = document.getElementById("button")
+      
+
+function genHex(){
+let val = "#";
+
+for( let i = 0; i < 6; i++){
+const picker = Math.floor(Math.random() * colors.length); 
+val += colors[picker];
+}
+    body.style.backgroundColor = val;
+    document.getElementById("hex").innerHTML = "Hex Color: " + val 
+    
+    console.log("Esse randomizador de cores foi escrito por Victor Gutierrez e idealizado pela JSBegginers")
+    }
+
+    
+       
+
+
+    </script>
+</body>
+</html>
